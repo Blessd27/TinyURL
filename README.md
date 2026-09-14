@@ -3,7 +3,7 @@
 A lightweight URL shortener built with **ASP.NET Core MVC**, matching the accompanying
 presentation slide-by-slide.
 
-## Tech stack (Slide 3)
+## Tech stack
 
 | Layer     | Technology |
 |-----------|------------|
@@ -35,7 +35,7 @@ TinyURL/
 └── TinyURL.csproj
 ```
 
-## How it implements the workflow (Slide 4)
+## How it implements the workflow
 
 1. **Enter Long URL** — user types a URL into the form on the home page.
 2. **Validate URL** — server-side validation via `[Url]` data annotation plus an
@@ -50,7 +50,7 @@ TinyURL/
    `RedirectController.Go`, which looks up the code and issues an HTTP redirect
    to the original URL (404 if the code isn't found, e.g. after a restart).
 
-## Features (Slide 5)
+## Features 
 
 - Generate Short URL
 - URL Validation
@@ -59,7 +59,7 @@ TinyURL/
 - URL Redirection
 - Responsive UI (Bootstrap 5 grid + components)
 
-## Limitations & Future Scope (Slide 7)
+## Limitations & Future Scope 
 
 By design (to keep the project focused on core MVC concepts), this app has no
 database, so data is lost on restart, and there's no analytics or authentication.
