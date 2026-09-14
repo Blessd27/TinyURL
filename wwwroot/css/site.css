@@ -1,0 +1,156 @@
+:root {
+  --tiny-navy: #0f1b3d;
+  --tiny-blue: #2563eb;
+  --tiny-blue-light: #e8f0fe;
+  --tiny-text: #1f2937;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #f5f7fb;
+  color: var(--tiny-text);
+  padding-bottom: 60px;
+}
+
+/* Navbar */
+.tinyurl-navbar {
+  background-color: var(--tiny-navy);
+}
+
+.tinyurl-navbar .link-icon {
+  color: var(--tiny-blue);
+}
+
+/* Hero card (mirrors the dark title slide) */
+.hero-card {
+  background: linear-gradient(135deg, var(--tiny-navy) 0%, #16264f 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tech-pills .pill {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Shorten form card */
+.shorten-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: -1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 27, 61, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.result-box {
+  background-color: var(--tiny-blue-light);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.result-label {
+  font-weight: 700;
+  color: var(--tiny-navy);
+  margin-bottom: 0.5rem;
+}
+
+.result-input {
+  font-weight: 600;
+  color: var(--tiny-blue);
+  background-color: #fff;
+}
+
+/* Steps section */
+.steps-section {
+  margin-top: 3rem;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--tiny-navy);
+  margin-bottom: 1.75rem;
+}
+
+.step-circle {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 50%;
+  background-color: var(--tiny-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 auto 0.75rem auto;
+}
+
+.step-text {
+  font-weight: 600;
+  color: var(--tiny-text);
+}
+
+/* Storage note strip */
+.storage-note {
+  margin-top: 2.5rem;
+  padding: 0.9rem;
+  background-color: var(--tiny-navy);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.storage-note code {
+  color: #93c5fd;
+}
+
+/* Generic content card (Privacy / Error pages) */
+.content-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(15, 27, 61, 0.08);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 40px;
+  background-color: #fff;
+}

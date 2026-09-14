@@ -1,0 +1,76 @@
+@model UrlShortenViewModel
+@{
+    ViewData["Title"] = "Shorten a URL";
+}
+
+<section class="hero-card text-center">
+    <div class="hero-icon">&#128279;</div>
+    <h1 class="hero-title">TinyURL</h1>
+    <p class="hero-subtitle">Turn long, clunky links into short, shareable ones &mdash; instantly.</p>
+    <div class="tech-pills">
+        <span class="pill">ASP.NET Core MVC</span>
+        <span class="pill">C#</span>
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+        <span class="pill">Bootstrap 5</span>
+        <span class="pill">JavaScript</span>
+    </div>
+</section>
+
+<section class="shorten-card">
+    <form asp-controller="Home" asp-action="Index" method="post" class="row g-2 align-items-start" novalidate>
+        @Html.AntiForgeryToken()
+        <div class="col-12 col-md-9">
+            <label asp-for="OriginalUrl" class="form-label fw-semibold">Enter a long URL</label>
+            <input asp-for="OriginalUrl" class="form-control form-control-lg"
+                   placeholder="https://example.com/products/category/electronics?id=8842" autofocus />
+            <span asp-validation-for="OriginalUrl" class="text-danger small"></span>
+        </div>
+        <div class="col-12 col-md-3 d-grid">
+            <label class="form-label d-none d-md-block">&nbsp;</label>
+            <button type="submit" class="btn btn-primary btn-lg">Generate Short URL</button>
+        </div>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.ShortUrl))
+    {
+        <div class="result-box mt-4" id="resultBox">
+            <div class="result-label">Your short URL is ready</div>
+            <div class="d-flex flex-column flex-sm-row gap-2 align-items-stretch">
+                <input type="text" class="form-control form-control-lg result-input" id="shortUrlInput"
+                       value="@Model.ShortUrl" readonly />
+                <button type="button" class="btn btn-outline-primary btn-lg" id="copyBtn"
+                        data-url="@Model.ShortUrl">
+                    <span id="copyBtnText">Copy</span>
+                </button>
+            </div>
+            <div class="form-text mt-2">Paste this link in a browser tab to be redirected to the original site.</div>
+        </div>
+    }
+</section>
+
+<section class="steps-section">
+    <h2 class="section-title text-center">How it works</h2>
+    <div class="row g-3 text-center steps-row">
+        <div class="col-6 col-md-3">
+            <div class="step-circle">1</div>
+            <p class="step-text">Enter Long URL</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="step-circle">2</div>
+            <p class="step-text">Validate &amp; Generate Code</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="step-circle">3</div>
+            <p class="step-text">Copy Short URL</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="step-circle">4</div>
+            <p class="step-text">Paste &amp; Redirect</p>
+        </div>
+    </div>
+</section>
+
+<section class="storage-note text-center">
+    <span>&#128190;</span> Storage: In-Memory <code>Dictionary&lt;string, string&gt;</code> &mdash; No Database Required
+</section>
